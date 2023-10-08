@@ -7,7 +7,7 @@ import { LOCAL_STORAGE_KEY } from 'helpers/localStorageKey';
 
 export const App = () => {
   const [contacts, setContacts] = useState(
-    JSON.parse(localStorage.getItem(LOCAL_STORAGE_KEY)) ?? []
+    () => JSON.parse(localStorage.getItem(LOCAL_STORAGE_KEY)) ?? []
   );
   const [filter, setFilter] = useState('');
 
